@@ -1,11 +1,18 @@
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
+import CreateThread from '@/components/CreateThread'
+import { Thread } from '../types'
 
 function Page() {
+  const [threads, setThreads] = useState<Thread[]>([]);
+
+  const handleCreate = (newThread: Thread) => {
+    setThreads(prevThreads => [...prevThreads, newThread]);
+  }
+
   return (
     <>
-    <div>Forum</div>
+      <CreateThread onCreate={handleCreate}/>
     </>
   )
 }
