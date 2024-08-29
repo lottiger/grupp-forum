@@ -13,6 +13,16 @@ function Page() {
   return (
     <>
       <CreateThread onCreate={handleCreate}/>
+      <div className="w-2/4 m-auto p-2 border">
+        {threads.map(thread => (
+          <div key={thread.id}>
+            <h2>Title: {thread.title}</h2>
+            <p>Description: {thread.description}</p>
+            <p>By: {thread.username}</p>
+            <p>Created on: {thread.creationDate}</p>
+          </div>
+        ))}
+      </div>
     </>
   )
 }
