@@ -13,7 +13,9 @@ function Page() {
   return (
     <>
       <CreateThread onCreate={handleCreate}/>
-      <div className="w-2/4 m-auto p-2 border">
+
+      // TODO: Göra en component av threadcard och styla
+      <div className="w-2/4 m-auto p-2 border-">
         {threads.map(thread => (
           <div key={thread.id}>
             <h2>Title: {thread.title}</h2>
