@@ -1,24 +1,35 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import CreateThread from '@/components/CreateThread'
 import { Thread } from '../types'
-import ThreadCard from '@/components/ThreadCard';
+import ThreadCard from '@/components/ThreadCard'
 
 function Page() {
   const [threads, setThreads] = useState<Thread[]>([]);
 
+  useEffect(() => {
+    const savedThreads = JSON.parse(localStorage.getItem('threads') || '[]')
+    setThreads(savedThreads)
+  }, []);
+
   const handleCreate = (newThread: Thread) => {
-    setThreads(prevThreads => [...prevThreads, newThread]);
+    const updatedThreads = [...threads, newThread]
+    setThreads(updatedThreads)
+    localStorage.setItem('threads', JSON.stringify(updatedThreads))
   }
 
-  // Vill vi ändra fil strukturen så att vi har main page i en pages mapp?
+  const handleClear = () => {
+    localStorage.clear()
+    setThreads([])
+  }
 
   return (
     <>
       <CreateThread onCreate={handleCreate}/>
+      <button onClick={handleClear}>Clear Local Storage</button>
       <div>
         {threads.map(thread => (
-          <ThreadCard key={thread.id} thread={thread} />
+          <ThreadCard key={thread.id} thread={thread}/>
         ))}
       </div>
     </>
