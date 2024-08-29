@@ -57,6 +57,9 @@ const CreateThread = ({ onCreate }: CreateThreadProps): JSX.Element => {
         onCreate(newThread)
 
         setConfirmationMessage('Tråden har skapats')
+        setTimeout(() => {
+            setConfirmationMessage('')
+        }, 5000)
 
         setTitle('')
         setDescription('')
@@ -86,7 +89,10 @@ const CreateThread = ({ onCreate }: CreateThreadProps): JSX.Element => {
                         <Input
                             value={title}
                             placeholder='Titel'
-                            onChange={(e) => setTitle(e.target.value)}
+                            onChange={(e) => {
+                                setTitle(e.target.value)
+                                setConfirmationMessage('')
+                            }}
                         />
                         {errors.title && <p className="text-red-500 error-message">{errors.title}</p>}
                     </div>
@@ -94,7 +100,10 @@ const CreateThread = ({ onCreate }: CreateThreadProps): JSX.Element => {
                         <Textarea
                             value={description}
                             placeholder='Beskrivning'
-                            onChange={(e) => setDescription(e.target.value)}
+                            onChange={(e) => {
+                                setDescription(e.target.value)
+                                setConfirmationMessage('')
+                            }}
                         />
                         {errors.description && <p className="text-red-500 error-message">{errors.description}</p>}
                     </div>
@@ -102,7 +111,10 @@ const CreateThread = ({ onCreate }: CreateThreadProps): JSX.Element => {
                         <Input
                             value={username}
                             placeholder='Användarnamn'
-                            onChange={(e) => setUsername(e.target.value)}
+                            onChange={(e) => {
+                                setUsername(e.target.value)
+                                setConfirmationMessage('')
+                            }}
                         />
                         {errors.username && <p className="text-red-500 error-message">{errors.username}</p>}
                     </div>
