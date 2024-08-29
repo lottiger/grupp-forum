@@ -11,6 +11,8 @@ function Page() {
     setThreads(prevThreads => [...prevThreads, newThread]);
   }
 
+  // Vill vi ändra fil strukturen så att vi har main page i en pages mapp?
+
   return (
     <>
       <CreateThread onCreate={handleCreate}/>
