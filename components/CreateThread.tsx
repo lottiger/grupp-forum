@@ -6,7 +6,7 @@ import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
 import { Button } from './ui/button'
 
-type CreateThreadProps = {
+interface CreateThreadProps {
     onCreate: (thread: Thread) => void
 }
 

@@ -52,8 +52,8 @@ const ThreadDetail = () => {
                 <h1 className="font-bold text-lg mb-4 flex items-center justify-center ">{post.title}</h1>
                 <p className="flex items-center justify-center">{post.description}</p>
             </div>
-            <div className="flex items-center justify-between mb-5">
-                <p className="mt-4 text-sm">{post.username}</p>
+            <div className="flex justify-between items-center mb-5">
+                <p className="text-sm">{post.username}</p>
                 <p className="text-sm">{post.creationDate}</p>
             </div>
             <CommentSection thread={post} onAddComment={handleAddComment} />
