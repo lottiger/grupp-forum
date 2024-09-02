@@ -15,7 +15,7 @@ function Page() {
   }, []);
 
   const handleCreate = (newThread: Thread) => {
-    const updatedThreads = [...threads, newThread]
+    const updatedThreads = [newThread, ...threads]
     setThreads(updatedThreads)
     localStorage.setItem('threads', JSON.stringify(updatedThreads))
   }
