@@ -14,11 +14,13 @@ const ThreadCard = ({ thread }: ThreadCardProps): JSX.Element => {
     };
 
     return (
-        <div onClick={handleClick} className="w-2/4 m-auto p-2 border-2 mt-2 cursor-pointer">
-            <h2>Titel: {thread.title}</h2>
-            <p>Beskrivning: {thread.description}</p>
-            <p>Av: {thread.username}</p>
-            <p>Skapad: {thread.creationDate}</p>
+        <div onClick={handleClick} className="w-2/4 m-auto p-2 border-2 mt-2 cursor-pointer rounded-xl">
+            <div className='text-center font-bold text-lg'>{thread.title}</div>
+            <p className='text-center'>{thread.description}</p>
+            <div className="flex justify-between mt-8">
+                <p className='text-sm'>{thread.username}</p>
+                <p className='text-sm'>{thread.creationDate}</p>
+            </div>
         </div>
     );
 };

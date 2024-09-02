@@ -46,17 +46,17 @@ const ThreadDetail = () => {
     }
 
     return (
-       
-            <div className="w-2/4 m-auto p-2 border-2 mt-2 cursor-pointer">
+        <div className="grid grid-rows-1 w-2/4 m-auto p-2 border-2 mt-2 cursor-pointer text-center rounded-xl">
+            <div>
                 <h1 className="font-semibold text-lg ">{post.title}</h1>
                 <p>{post.description}</p>
-                <p className="mt-4">Av: {post.username}</p>
-                <p className="">Skapad: {post.creationDate}</p>
-           
-            <CommentSection thread={post} onAddComment={handleAddComment} />
-            
             </div>
-       
+            <div className="flex items-center justify-between">
+                <p className="mt-4 text-sm">{post.username}</p>
+                <p className="text-sm">{post.creationDate}</p>
+            </div>
+            <CommentSection thread={post} onAddComment={handleAddComment} />
+        </div>
     );
 };
 
