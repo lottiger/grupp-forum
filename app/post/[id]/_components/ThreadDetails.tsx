@@ -50,8 +50,8 @@ const ThreadDetail = () => {
             <div className="w-2/4 m-auto p-2 border-2 mt-2 cursor-pointer">
                 <h1 className="font-semibold text-lg ">{post.title}</h1>
                 <p>{post.description}</p>
-                <p className="mt-4">Posted by: {post.username}</p>
-                <p className="">Created on: {post.creationDate}</p>
+                <p className="mt-4">Av: {post.username}</p>
+                <p className="">Skapad: {post.creationDate}</p>
            
             <CommentSection thread={post} onAddComment={handleAddComment} />
             
