@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import CreateThread from '@/components/CreateThread'
 import { Thread } from '../types'
 import ThreadCard from '@/components/ThreadCard'
-import { Button } from '@/components/ui/button'
 
 function Page() {
   const [threads, setThreads] = useState<Thread[]>([]);
@@ -19,18 +18,10 @@ function Page() {
     localStorage.setItem('threads', JSON.stringify(updatedThreads))
   }
 
-  const handleClear = () => {
-    localStorage.clear()
-    setThreads([])
-  }
-
   return (
     <>
       <CreateThread onCreate={handleCreate}/>
       <div>
-        <div className="flex justify-center">
-          <Button onClick={handleClear} className="w-30">Clear Local Storage</Button>
-        </div>
         {threads.map(thread => (
           <ThreadCard key={thread.id} thread={thread}/>
         ))}
