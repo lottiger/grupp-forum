@@ -88,6 +88,7 @@ const CreateThread = ({ onCreate }: CreateThreadProps): JSX.Element => {
                 <div className='flex flex-col space-y-4'>
                     <div>
                         <Input
+                            className='rounded border border-gray-300'
                             value={title}
                             placeholder='Titel'
                             onChange={(e) => {
@@ -99,6 +100,7 @@ const CreateThread = ({ onCreate }: CreateThreadProps): JSX.Element => {
                     </div>
                     <div>
                         <Textarea
+                            className='rounded border border-gray-300'
                             value={description}
                             placeholder='Beskrivning'
                             onChange={(e) => {
@@ -110,6 +112,7 @@ const CreateThread = ({ onCreate }: CreateThreadProps): JSX.Element => {
                     </div>
                     <div>
                         <Input
+                            className='rounded border border-gray-300'
                             value={username}
                             placeholder='Användarnamn'
                             onChange={(e) => {
@@ -119,7 +122,9 @@ const CreateThread = ({ onCreate }: CreateThreadProps): JSX.Element => {
                         />
                         {errors.username && <p className="text-red-500 error-message">{errors.username}</p>}
                     </div>
-                    <Button onClick={handleClick}>
+                    <Button onClick={handleClick}
+                    className='bg-gray-600 text-white hover:bg-gray-700 rounded'
+                    >
                         Skapa tråd
                     </Button>
                 </div>

@@ -46,16 +46,18 @@ const ThreadDetail = () => {
     }
 
     return (
-        <div className="grid grid-rows-1 w-2/4 m-auto p-2 border-2 mt-2 cursor-pointer text-center rounded-xl">
-            <div>
-                <h1 className="font-semibold text-lg ">{post.title}</h1>
-                <p>{post.description}</p>
+        <div className="flex items-center justify-center m-8">
+        <div className="w-full max-w-lg p-6 bg-white border rounded-xl shadow-lg space-y-4">
+            <div className="py-6">
+                <h1 className="font-bold text-lg mb-4 flex items-center justify-center ">{post.title}</h1>
+                <p className="flex items-center justify-center">{post.description}</p>
             </div>
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between mb-5">
                 <p className="mt-4 text-sm">{post.username}</p>
                 <p className="text-sm">{post.creationDate}</p>
             </div>
             <CommentSection thread={post} onAddComment={handleAddComment} />
+        </div>
         </div>
     );
 };

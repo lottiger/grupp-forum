@@ -32,26 +32,26 @@ function CommentSection({ thread, onAddComment }: CommentSectionProps): JSX.Elem
 
   return (
     <div>
-      <div className="mt-4">
+      <div className="">
         <form onSubmit={handleAddComment}>
           <Input
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="w-full border p-2 mb-2"
+            className="w-full p-2 mb-2 rounded border-gray-300"
             placeholder="Användarnamn"
             required
           />
           <Textarea
             value={commentText}
             onChange={(e) => setCommentText(e.target.value)}
-            className="w-full border p-2"
+            className="w-full p-2 rounded border-gray-300"
             rows={3}
             placeholder="Skriv en kommentar..."
             required
           />
           <Button type="submit"
-          className=''>
+           className='bg-gray-600 text-white hover:bg-gray-700 rounded w-full my-4'>
             Lägg till
           </Button>
         </form>
