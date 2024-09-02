@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from 'react';
 import { Comment, Thread } from '@/types';
 import { Button } from '@/components/ui/button';
@@ -62,11 +61,11 @@ function CommentSection({ thread, onAddComment }: CommentSectionProps): JSX.Elem
         thread.comments.map((comment) => (
           <div key={comment.id} className="border-b p-2">
             <p><strong>{comment.username}</strong>: {comment.content}</p>
-            <p><small>{new Date(comment.createdAt).toLocaleString()}</small></p>
+            <p><small>{new Date(comment.createdAt).toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: '2-digit', hour: '2-digit', minute: '2-digit' })}</small></p>
           </div>
         ))
       ) : (
-        <p>Inga kommentaren än.</p>
+        <p>Inga kommentarer än.</p>
       )}
       
     </div>
