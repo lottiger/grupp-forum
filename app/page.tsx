@@ -4,6 +4,7 @@ import CreateThread from '@/components/CreateThread'
 import { Thread } from '../types'
 import ThreadCard from '@/components/ThreadCard'
 import { Button } from '@/components/ui/button'
+import Navbar from '@/components/Navbar'
 
 function Page() {
   const [threads, setThreads] = useState<Thread[]>([]);
@@ -26,6 +27,7 @@ function Page() {
 
   return (
     <>
+    <Navbar />
       <CreateThread onCreate={handleCreate}/>
       <div>
         <div className="flex justify-center">
