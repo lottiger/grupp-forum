@@ -47,7 +47,8 @@ const CreateThread = ({ onCreate }: CreateThreadProps): JSX.Element => {
             title,
             description,
             username,
-            creationDate: new Date().toISOString(),
+            creationDate: new Date().toLocaleString([], { year: '2-digit', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }),
+            comments: []
         }
 
         const existingThreads = JSON.parse(localStorage.getItem('threads') || '[]')
