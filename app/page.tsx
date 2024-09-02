@@ -4,6 +4,8 @@ import CreateThread from '@/components/CreateThread'
 import { Thread } from '../types'
 import ThreadCard from '@/components/ThreadCard'
 import { Button } from '@/components/ui/button'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 function Page() {
   const [threads, setThreads] = useState<Thread[]>([]);
@@ -33,8 +35,10 @@ function Page() {
         </div>
         {threads.map(thread => (
           <ThreadCard key={thread.id} thread={thread}/>
+    
         ))}
       </div>
+      <Footer />
     </>
   )
 }
