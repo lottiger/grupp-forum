@@ -6,7 +6,7 @@ interface ThreadCardProps {
   thread: Thread
 }
 
-const ThreadCard: React.FC<ThreadCardProps> = ({ thread }) => {
+const ThreadCard = ({ thread }: ThreadCardProps): JSX.Element => {
     const router = useRouter()
 
     const handleClick = () => {
@@ -15,10 +15,10 @@ const ThreadCard: React.FC<ThreadCardProps> = ({ thread }) => {
 
     return (
         <div onClick={handleClick} className="w-2/4 m-auto p-2 border-2 mt-2 cursor-pointer">
-            <h2>Title: {thread.title}</h2>
-            <p>Description: {thread.description}</p>
-            <p>By: {thread.username}</p>
-            <p>Created on: {thread.creationDate}</p>
+            <h2>Titel: {thread.title}</h2>
+            <p>Beskrivning: {thread.description}</p>
+            <p>Av: {thread.username}</p>
+            <p>Skapad: {thread.creationDate}</p>
         </div>
     );
 };
