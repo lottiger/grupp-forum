@@ -27,7 +27,7 @@ function Page() {
     
         ))}
       </div>
-      <Footer />
+    
     </>
   )
 }
