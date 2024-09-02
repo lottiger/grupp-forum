@@ -37,12 +37,14 @@
 // export default Post;
 import React from 'react'
 import ThreadDetails from './_components/ThreadDetails'
+import Footer from '@/components/Footer'
 
 function DetailPage() {
   return (
     <>
     <div>DetailPage</div>
     <ThreadDetails />
+    <Footer />
     </>
   )
 }
